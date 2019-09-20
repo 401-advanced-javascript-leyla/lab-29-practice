@@ -6,15 +6,16 @@ export default class Deck extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-          content: {},
+          deck: this.props.deck,
       }
     }
 
     render(){
       return (
         <>
-        //todo: use card for each content section
-          <Card />
+          {this.state.deck.records.map( (card) =>
+            <Card card = {card}/>
+          )}
         </>
       );
     }
